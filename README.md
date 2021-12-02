@@ -11,11 +11,11 @@ here is a list of them:
  * transproxy - transparent proxy for HTTP: http://transproxy.sourceforge.net/
  * stunnel - multiplatform SSL tunneling proxy: http://www.stunnel.org/
 
-## TRAVIS CI STATUS
+## This fork uses GitHub Actions to build the APKs
 
-[![Build Status](https://secure.travis-ci.org/madeye/proxydroid.png)](http://travis-ci.org/madeye/proxydroid)
+[![Android CI](https://github.com/detunized/proxydroid/actions/workflows/ci.yml/badge.svg)](https://github.com/detunized/proxydroid/actions/workflows/ci.yml)
 
-[Nightly Builds](http://buildbot.sinaapp.com)
+The APKs could be downloaded from the latest succesful [run](https://github.com/detunized/proxydroid/actions/workflows/ci.yml).
 
 ## PREREQUISITES
 
@@ -24,22 +24,10 @@ here is a list of them:
 * Android SDK r17+
 * Android NDK r8+
 
-* Local Maven Dependencies
-
-  Use Maven Android SDK Deployer to install all android related dependencies.
-
-  ```bash
-  git clone https://github.com/mosabua/maven-android-sdk-deployer.git 
-  pushd maven-android-sdk-deployer
-  export ANDROID_HOME=/path/to/android/sdk
-  mvn install -P 4.1
-  popd
-  ```
-
 ## BUILD
 
 Invoke the building like this
 
 ```bash
-  mvn clean install
+cd android-studio-project && ./gradlew build
 ```
